@@ -28,11 +28,11 @@ public class FizzBuzzTest {
     @DisplayName("Given an input divisible by 5, return Buzz")
     public void givenAnInputDivisibleBy5ReturnBuzz() {
         //arrange
-        int input = 10;
+        int input3 = 10;
 
         //act
         FizzBuzz fizzBuzz = new FizzBuzz();
-        String actualResult = fizzBuzz.convert(input);
+        String actualResult = fizzBuzz.convert(input3);
 
         //assert
         String expected = "Buzz";
