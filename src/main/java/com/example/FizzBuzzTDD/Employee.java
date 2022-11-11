@@ -12,6 +12,11 @@ public class Employee {
         this.salary = salary;
     }
 
+    public Employee(String name,  int age ) {
+        this.name = name;
+        this.age = age;
+    }
+
     public Employee(String name, int age, Double salary, String position) {
         this.name = name;
         this.age = age;
