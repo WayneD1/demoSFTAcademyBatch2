@@ -48,4 +48,25 @@ class EmployeeServiceTest {
         Mockito.verify(employeeRespository.getAllEmployees(), Mockito.atLeastOnce());
         assertThat(filteredEmployees).contains(alejandro, jhon_lyoyd);
     }
+
+    @Test
+    @DisplayName("get employees age testr")
+    public void ageFeature() {
+        //arrange
+        Employee wayne = new Employee("Wayne", 29);
+        Employee alejandro = new Employee("Alejandro", 23);
+        Employee jhon_lyoyd = new Employee("Jhon Lyoyd", 23);
+        List<Employee> employees = List.of(wayne
+                , alejandro, jhon_lyoyd);
+
+        Mockito.when(employeeRespository.getAllEmployees())
+                .thenReturn(employees);
+        //act
+        List<Employee> filteredEmployees = employeeService.getAllEmployeesExceedingAge(25);
+
+        //assert
+
+        assertThat(filteredEmployees).contains(wayne);
+
+    }
 }

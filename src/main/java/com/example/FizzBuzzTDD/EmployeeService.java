@@ -20,7 +20,8 @@ public class EmployeeService {
     }
 
     public List<Employee> getAllEmployeesExceedingAge(int age) {
-        return null;
+        return employeeRespository.getAllEmployees().stream().filter(employee -> employee.getAge() > age)
+                .collect(Collectors.toList());
     }
 
     public List<Employee> getAllEmployeesWithMatchingPosition(String position) {
